@@ -4,6 +4,7 @@ import {validationResult, Result, ValidationError} from "express-validator";
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import {GenerateToken} from "../utils";
+
 class UserController {
     register = async (req:Request,res: Response): Promise<void> =>{
         const lastDat = await UserModel.findOne().sort( { createdAt: -1 } ).exec();

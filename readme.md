@@ -8,3 +8,13 @@ For User
     /api/user/me        |   GET    |  Private  
     
 ```
+
+For Week
+```
+    /api/week/create     |  POST  | Protect
+    /api/week/all        |  GET   | Private
+    /api/week/:id        |  PUT   | Protected
+    /api/week/:id        | DELETE | Protected
+    
+```
+

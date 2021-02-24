@@ -2,7 +2,7 @@ import express from 'express'
 import cors from "cors";
 const app = express()
 import {
-    UserCtrl
+    UserCtrl, WeekCtrl
 } from "../app/controllers";
 app.use( cors() );
 const options: cors.CorsOptions = {
@@ -23,6 +23,13 @@ const createRoutes = (app: express.Express)=>{
     app.post('/api/user/login', UserController.login)
     app.post('/api/user/logout', UserController.logout)
     app.get('/api/user/me', UserController.me)
+
+    // From Weeks
+    const WeekController = new WeekCtrl()
+    app.post('/api/week/create',WeekController.create)
+    app.get('/api/week/all',WeekController.get)
+    app.put('/api/week/:id',WeekController.edit)
+    app.delete('/api/week/:id',WeekController.rm)
 }
 
 export default createRoutes;
