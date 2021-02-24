@@ -13,8 +13,17 @@ For Week
 ```
     /api/week/create     |  POST  | Protect
     /api/week/all        |  GET   | Private
-    /api/week/:id        |  PUT   | Protected
-    /api/week/:id        | DELETE | Protected
+    /api/week/:id        |  PUT   | Protect
+    /api/week/:id        | DELETE | Protect
     
+```
+
+For Course
+```
+    /api/course/create   | POST | Protect
+    /api/course/all      | POST | Protect
+    /api/course/type   | GET  | Private
+    /api/course/:id   | GET  | Private
+    /api/course/:id   | DELETE  | Protect
 ```
 

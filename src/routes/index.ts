@@ -2,6 +2,7 @@ import express from 'express'
 import cors from "cors";
 const app = express()
 import {
+    CourseCtrl,
     UserCtrl, WeekCtrl
 } from "../app/controllers";
 app.use( cors() );
@@ -30,6 +31,13 @@ const createRoutes = (app: express.Express)=>{
     app.get('/api/week/all',WeekController.get)
     app.put('/api/week/:id',WeekController.edit)
     app.delete('/api/week/:id',WeekController.rm)
+
+    const CourseController = new CourseCtrl()
+    app.post('/api/course/create', CourseController.create)
+    app.get('/api/course/all', CourseController.getAll)
+    app.get('/api/course/type', CourseController.getByType)
+    app.get('/api/course/:id', CourseController.getById)
+    app.delete('/api/course/:id', CourseController.rm)
 }
 
 export default createRoutes;

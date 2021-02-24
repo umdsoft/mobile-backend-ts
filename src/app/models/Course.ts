@@ -6,7 +6,8 @@ export interface ICourse extends Document{
     type: string,
     video: string,
     week: IWeek | string,
-    description: string
+    description: string,
+    price: string,
 }
 
 const CourseSchema: Schema = new Schema({
@@ -18,7 +19,8 @@ const CourseSchema: Schema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Week",
         required: true
-    }
+    },
+    price: {type: String, enum: ['free','selling'],required: true}
 },{timestamps: true})
 
 const CourseModel = mongoose.model<ICourse>("Course",CourseSchema)
