@@ -16,7 +16,7 @@ class CourseController{
         } = {
             name: req.body.name,
             type: req.body.type,
-            video: req.body.video,
+            video: req.file.path,
             week: req.body.week,
             description: req.body.description,
             price: req.body.price
