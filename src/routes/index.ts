@@ -7,7 +7,7 @@ import {
     CourseCtrl,
     UserCtrl, WeekCtrl
 } from "../app/controllers";
-app.use( cors() );
+
 const options: cors.CorsOptions = {
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
     credentials: true,
@@ -17,6 +17,8 @@ const options: cors.CorsOptions = {
     optionsSuccessStatus: 204, // some legacy browsers (IE11, various SmartTVs) choke on 204
     preflightContinue: false
 };
+
+app.use( cors() );
 //enable pre-flight
 app.options( "*", cors( options ) );
 const createRoutes = (app: express.Express)=>{
