@@ -12,8 +12,8 @@ const options: cors.CorsOptions = {
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
     credentials: true,
     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-    origin: true,
-    //origin: "*",
+    //origin: true,
+    origin: "*",
     optionsSuccessStatus: 204, // some legacy browsers (IE11, various SmartTVs) choke on 204
     preflightContinue: false
 };
